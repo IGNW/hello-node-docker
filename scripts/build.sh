@@ -1,3 +1,4 @@
+set -x
 export TAG="10.50.0.199/examples/hello-nodejs"
 npm install
 docker build -t "hello-nodejs" .
