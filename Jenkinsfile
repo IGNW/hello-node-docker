@@ -13,5 +13,11 @@ pipeline {
                 echo 'Run your test scripts here.'
             }
         }
+
+        stage('Deploy') {
+            steps {
+                sh 'scripts/deploy.sh'
+            }
+        }
     }
 }
