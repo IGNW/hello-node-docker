@@ -7,9 +7,7 @@ pipeline {
                 sh 'scripts/build.sh'
             }
         }
-    }
 
-    stages {
         stage('Test') {
             steps {
                 echo 'Run your test scripts here.'
