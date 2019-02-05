@@ -1,4 +1,5 @@
-FROM 10.50.0.199/base/node:10.14.1
+ARG BASE_IMAGE=node:latest
+FROM ${BASE_IMAGE}
 USER root
 
 COPY . /usr/src/app/

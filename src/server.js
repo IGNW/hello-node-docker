@@ -36,14 +36,16 @@ router.get('/health', function(req, res) {
     res.json({ status: 'UP' });
 });
 
+router.get('/hello', function(req, res) {
+	  res.json({message: 'Hello World!'});
+});
+
 router.get('/', function(req, res) {
 	var pjson = require ('../package.json');
 	var deployEnv = process.env.DEPLOYMENT_ENV || "unknown";
-	var nodeIp = process.env.NODE_IP || "unknown";
-    var nodeName = process.env.NODE_NAME || "unknown";
-   
-    log.info(pjson.name + " v" + pjson.version + " running in " + deployEnv);
-	res.json({ name: pjson.name, version: pjson.version, deploy_env: deployEnv, node_name: nodeName, node_ip: nodeIp, uptime: uptime.getUptime() });
+
+  log.info(pjson.name + " v" + pjson.version + " running in " + deployEnv);
+	res.json({ name: pjson.name, version: pjson.version, uptime: uptime.getUptime() });
 });
 
 // REGISTER OUR ROUTES -------------------------------

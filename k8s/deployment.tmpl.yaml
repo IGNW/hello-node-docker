@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: "hello-nodejs"
-        image: "10.50.0.199/examples/hello-nodejs:{{BUILD_NUMBER}}"
+        image: "{{DOCKER_REPO}}:{{BUILD_NUMBER}}"
         resources:
           limits:
             memory: "128M"
