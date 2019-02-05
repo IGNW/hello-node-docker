@@ -10,7 +10,7 @@ fi
 
 npm install
 docker build -t --build-arg BASE_IMAGE=$BASE_IMAGE "hello-nodejs" .
-docker tag "hello-nodejs" "$TAG:$BUILD_NUMBER"
-docker tag "hello-nodejs" "$TAG:latest"
-docker push "$TAG:$BUILD_NUMBER"
-docker push "$TAG:latest"
+docker tag "hello-nodejs" "$DOCKER_REPO:$BUILD_NUMBER"
+docker tag "hello-nodejs" "$DOCKER_REPO:latest"
+docker push "$DOCKER_REPO:$BUILD_NUMBER"
+docker push "$DOCKER_REPO:latest"
