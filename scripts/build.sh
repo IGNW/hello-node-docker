@@ -3,7 +3,7 @@ if [ -z BASE_IMAGE ]; then
   BASE_IMAGE="node:10.15"
 fi
 
-if [ -z DOCKER_REPO ];
+if [ -z DOCKER_REPO ]; then
   echo "ERROR: DOCKER_REPO is not defined."
   exit 1
 fi
