@@ -1,6 +1,6 @@
 set -ex
 
-$DEFAULT_BASE_IMAGE="node:10.15"
+DEFAULT_BASE_IMAGE="node:10.15"
 
 if [ -z $BASE_IMAGE ]; then
   echo "WARNING: BASE_IMAGE is not defined.  Defaulting to $DEFAULT_BASE_IMAGE"
