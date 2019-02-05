@@ -5,6 +5,9 @@ metadata:
   name: "hello-nodejs"
   namespace: default
 spec:
+  selector:
+    matchLabels:
+      appname: "hello-nodejs"
   replicas: 1
   template:
     metadata:
