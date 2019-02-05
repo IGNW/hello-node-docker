@@ -8,6 +8,7 @@ spec:
   selector:
     matchLabels:
       appname: "hello-nodejs"
+      version: "{{BUILD_NUMBER}}"
   replicas: 1
   template:
     metadata:
