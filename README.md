@@ -8,6 +8,6 @@ docker build --build-arg BASE_IMAGE=repo.com/dirname/node:version -t hello_nodej
 docker run -d -p 8080:8080 hello_nodejs
 ````
 
-Better yet, use the build and deploy scriots, which are designed to be run
+Better yet, use the build and deploy scripts, which are designed to be run
 from your CI/CD tool (i.e. Jenkins, Bamboo, etc).  The scripts require that
 a BUILD_NUMBER env variable be set and will honor a DOCKER_REPO env variable.
