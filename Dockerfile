@@ -1,4 +1,4 @@
-ARG BASE_IMAGE=node:latest
+ARG BASE_IMAGE=node:10.15
 FROM ${BASE_IMAGE}
 USER root
 
