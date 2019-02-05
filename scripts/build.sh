@@ -1,6 +1,10 @@
 set -x
+
+$DEFAULT_BASE_IMAGE="node:10.15"
+
 if [ -z $BASE_IMAGE ]; then
-  BASE_IMAGE="node:10.15"
+  echo "WARNING: BASE_IMAGE is not defined.  Defaulting to $DEFAULT_BASE_IMAGE"
+  BASE_IMAGE="$DEFAULT_BASE_IMAGE"
 fi
 
 if [ -z $DOCKER_REPO ]; then
