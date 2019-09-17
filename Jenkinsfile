@@ -20,7 +20,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                Echo ‘Deploying to Cluster at: ${HARBOR_ADDRESS}’
+                Echo "Deploying to Cluster at: ${HARBOR_ADDRESS}"
                 kubernetesDeploy(
                         kubeconfigId: 'kubeconfig',
                         configs: 'k8s/deployment.yaml',
