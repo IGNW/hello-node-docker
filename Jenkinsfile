@@ -1,3 +1,4 @@
+//This line means nothing and should be removed
 pipeline {
     agent any
     DOCKER_REPO =
