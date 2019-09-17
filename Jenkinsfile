@@ -5,17 +5,14 @@ pipeline {
         HARBOR_USER = "$HARBOR_CREDS_USR" // pull user from credentials
         HARBOR_PASSWORD = "$HARBOR_CREDS_PSW" // pull password from credentials
     }
-
     stages {
         stage('Build') {
             steps {
                 Echo ‘Build Docker Image.’ 
                 sh "docker login ${HARBOR_ADDRESS} -u ${HARBOR_USER} -p ${HARBOR_PASSWORD}"
-                sh "cd docker; docker build -t ${HARBOR_ADDRESS}/multicare/webserver:${BUILD_NUMBER} ."
-                
+                sh "cd docker; docker build -t ${HARBOR_ADDRESS}/multicare/webserver:${BUILD_NUMBER} ."                
             }
         }
-
         stage('Push image') {
             steps {
                 echo 'Push image to Registry.'
@@ -28,8 +25,7 @@ pipeline {
                 // sh "docker push ${HARBOR_ADDRESS}/multicare/webserver:latest"
             }
         }
-
-         stage('Deploy') {
+        stage('Deploy') {
             steps {
                 Echo ‘Deploying to Cluster at: ${HARBOR_ADDRESS}’
                 kubernetesDeploy(
