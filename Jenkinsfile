@@ -1,3 +1,4 @@
+//newline to test pipeline automation 
 pipeline {
     agent any
 
