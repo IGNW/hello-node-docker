@@ -16,13 +16,6 @@ pipeline {
         stage('Push image') {
             steps {
                 echo 'Push image to Registry.'
-                docker.withRegistry('https://${HARBOR_ADDRESS}', 'harboruser')
-                {
-                        app.push ("$BUILD_NUMBER")
-                }
-                // sh "docker push ${HARBOR_ADDRESS}/multicare/webserver:${BUILD_NUMBER}"
-                // sh "docker tag ${HARBOR_ADDRESS}/multicare/webserver:${BUILD_NUMBER} ${HARBOR_ADDRESS}/multicare/webserver:latest"
-                // sh "docker push ${HARBOR_ADDRESS}/multicare/webserver:latest"
             }
         }
         stage('Deploy') {
