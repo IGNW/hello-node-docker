@@ -23,7 +23,6 @@ else
   echo "INFO: Pushing to destination repo $DOCKER_REPO"
 fi
 
-npm install
 docker build --build-arg BASE_IMAGE=$BASE_IMAGE -t "hello-nodejs" .
 docker tag "hello-nodejs" "$DOCKER_REPO:$BUILD_NUMBER"
 docker tag "hello-nodejs" "$DOCKER_REPO:latest"
