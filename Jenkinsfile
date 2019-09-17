@@ -1,6 +1,6 @@
 pipeline {
     agent any
-
+    DOCKER_REPO =
     stages {
         stage('Build') {
             steps {
