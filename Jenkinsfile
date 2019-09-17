@@ -1,21 +1,20 @@
 // adding line to force build
 pipeline {
     agent any
-    DOCKER_REPO =
     stages {
-        stage('Build') {
+        stages('Build') {
             steps {
                 sh 'scripts/build.sh'
             }
         }
 
-        stage('Test') {
+        stages('Test') {
             steps {
                 echo 'Run your test scripts here.'
             }
         }
 
-        stage('Deploy') {
+        stages('Deploy') {
             steps {
                 sh 'scripts/deploy.sh'
             }
