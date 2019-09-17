@@ -7,9 +7,10 @@ pipeline {
         HARBOR_PASSWORD = "$HARBOR_CREDS_PSW"
     }
     stages {
+        echo 'Checking project out from git..'
         stage('Build') {
             steps {
-                echo 'Building..'
+                echo 'Building docker image..'
                 sh "docker login ${HARBOR_ADDRESS} -u ${HARBOR_USER} -p ${HARBOR_PASSWORD}"
                 sh "cd docker; docker build -t ${HARBOR_ADDRESS}/multicare/webserver:${BUILD_NUMBER} ."
             }
