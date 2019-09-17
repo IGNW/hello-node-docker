@@ -1,4 +1,5 @@
 pipeline {
+    agent any
     environment {
         HARBOR_ADDRESS="172.21.6.207"  // IP address of Harbor cluster 
         HARBOR_CREDS = credentials('harboruser')  // name of credentials stored in jenkins
